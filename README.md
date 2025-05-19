@@ -1,16 +1,22 @@
-# Home-Server
+# My Cool Project
+
+Here’s a little workflow:
 
 ```mermaid
-graph TD;
-  A-->B;
+graph TD
+  A[Prepare env] --> B[Run tests]
+  B --> C{All green?}
+  C -- yes --> D[Deploy]
+  C -- no --> E[Fix bugs]
 
-```bash
+
 #!/usr/bin/env bash
+set -e
 
-# update package list
+echo "Updating package list…"
 sudo apt update
 
-# install nginx
+echo "Installing nginx…"
 sudo apt install -y nginx
 
 echo "Done!"
