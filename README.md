@@ -8,8 +8,11 @@ graph TD
   B --> C{All green?}
   C -- yes --> D[Deploy]
   C -- no --> E[Fix bugs]
+```
 
+And here’s the install script:
 
+```bash
 #!/usr/bin/env bash
 set -e
 
@@ -20,3 +23,4 @@ echo "Installing nginx…"
 sudo apt install -y nginx
 
 echo "Done!"
+```
