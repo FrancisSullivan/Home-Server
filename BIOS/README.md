@@ -55,9 +55,19 @@ USB Power delivery in Soft Off state = Enabled
 
 ### Advanced\AMD PBS
 
+Ensure:
+
+PCIe/GFX Lanes Config = x16
+
+PCIe x16 Bus Interface = Auto
+
 ![Screenshot](./images/Advanced-AMD_PBS.png)
 
 ### Advanced\AMD CBS\CPU Common
+
+Ensure:
+
+Power Supply Idle Control = Low Current Idle
 
 ![Screenshot](./images/Advanced-AMD_CBS-CPU_Common.png)
 
