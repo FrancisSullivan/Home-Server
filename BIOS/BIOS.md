@@ -25,8 +25,14 @@ sudo apt install -y nginx
 echo "Done!"
 ```
 
+## Advanced
+
 ![Screenshot](./images/Advanced.png)
 
-![Screenshot](./images/Advanced/OnboardDevicesConfiguration.png)
+### Onboard Devices
 
-![Screenshot](./images/Advanced/OnboardDevicesConfiguration.png)
+![Screenshot](./images/Advanced/Onboard_Devices.png)
+
+### PCI
+
+![Screenshot](./images/Advanced/PCI.png)
