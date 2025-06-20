@@ -1,39 +1,55 @@
 # BIOS
 
-Set as shown:
-
 ## Main
 
-Ensure BIOS version is the same accross all units.
+Ensure: BIOS version is the same accross all units.
 [Get BIOS versions here](https://www.asrock.com/mb/AMD/B550M%20Pro4/index.asp#BIOS)
 
 ![Screenshot](./images/Main_Page.png)
 
 ### Time
 
-Make sure time is accurate. Timezone diffrences may affect hh:mm:ss even is date is correct.
+Ensure:
+
+Time is accurate. Timezone diffrences may affect hh:mm:ss even is date is correct.
 
 ![Screenshot](./images/Time.png)
 
-## Advanced
-
-![Screenshot](./images/Advanced.png)
-
 ### Advanced\PCI
 
-Enable all.
+Ensure:
+
+All are enabled.
 
 ![Screenshot](./images/Advanced-PCI.png)
 
 ### Advanced\Onboard Devices
 
+Ensure:
+
+Restore on AC/Power Loss = Power on
+
+Onboard LAN = Enabled
+
 ![Screenshot](./images/Advanced-Onboard_Devices.png)
 
 ### Advanced\Storage
 
+Ensure:
+
+SATA Hot Plug = Enabled
+
 ![Screenshot](./images/Advanced-Storage.png)
 
 ### Advanced\ACPI
+
+Ensure:
+
+PCIE Devices Power On = Enabled
+
+RTC Alarm Power On = By OS
+
+USB Power delivery in Soft Off state = Enabled
 
 ![Screenshot](./images/Advanced-ACPI.png)
 
@@ -47,12 +63,18 @@ Enable all.
 
 ### Advanced\AMD CBS\NBIO Common
 
+Ensure:
+
+IOMMU = Enabled
+
+All other options = Auto
+
 ![Screenshot](./images/Advanced-AMD_CBS-NBIO_Common.png)
 
-## Security
-
-![Screenshot](./images/Security.png)
-
 ## Security\Secure Boot
+
+Ensure:
+
+Secure Boot = Disabled
 
 ![Screenshot](./images/Security-Secure_Boot.png)
