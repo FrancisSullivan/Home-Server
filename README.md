@@ -27,4 +27,4 @@ echo "Done!"
 
 #
 
-<img width="1431" alt="Screenshot 2025-06-20 at 6 49 28 pm" src="https://github.com/user-attachments/assets/6712efae-526c-451e-919a-cb4cab1a4fce" />
+![Diagram](./images/wake.png)
