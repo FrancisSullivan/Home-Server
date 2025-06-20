@@ -19,22 +19,40 @@ Make sure time is accurate. Timezone diffrences may affect hh:mm:ss even is date
 
 ![Screenshot](./images/Advanced.png)
 
-### PCI
+### Advanced\PCI
+
+Enable all.
 
 ![Screenshot](./images/Advanced-PCI.png)
 
-### Onboard Devices
+### Advanced\Onboard Devices
 
 ![Screenshot](./images/Advanced-Onboard_Devices.png)
 
-### Storage
+### Advanced\Storage
 
 ![Screenshot](./images/Advanced-Storage.png)
 
-### ACPI
+### Advanced\ACPI
 
 ![Screenshot](./images/Advanced-ACPI.png)
 
-### AMD PBS
+### Advanced\AMD PBS
 
 ![Screenshot](./images/Advanced-AMD_PBS.png)
+
+### Advanced\AMD CBS\CPU Common
+
+![Screenshot](./images/Advanced-AMD_CBS-CPU_Common.png)
+
+### Advanced\AMD CBS\NBIO Common
+
+![Screenshot](./images/Advanced-AMD_CBS-NBIO_Common.png)
+
+## Security
+
+![Screenshot](./images/Security.png)
+
+## Security\Secure Boot
+
+![Screenshot](./images/Security-Secure_Boot.png)
