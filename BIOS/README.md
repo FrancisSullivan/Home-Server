@@ -7,7 +7,7 @@ Set as shown:
 Ensure BIOS version is the same accross all units.
 [Get BIOS versions here](https://www.asrock.com/mb/AMD/B550M%20Pro4/index.asp#BIOS)
 
-![Screenshot](./images/Main.png)
+![Screenshot](./images/Main_Page.png)
 
 ### Time
 
