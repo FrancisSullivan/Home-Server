@@ -25,6 +25,4 @@ sudo apt install -y nginx
 echo "Done!"
 ```
 
-#
-
 ![Diagram](./images/wake.png)

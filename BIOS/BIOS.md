@@ -25,6 +25,8 @@ sudo apt install -y nginx
 echo "Done!"
 ```
 
-#
+![Screenshot](./images/Advanced.png)
 
-![Diagram](./images/wake.png)
+![Screenshot](./images/Advanced/OnboardDevicesConfiguration.png)
+
+![Screenshot](./images/Advanced/OnboardDevicesConfiguration.png)
