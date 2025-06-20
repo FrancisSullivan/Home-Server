@@ -1,38 +1,38 @@
-# My Cool Project
+# BIOS
 
-Here’s a little workflow:
+Set as shown:
 
-```mermaid
-graph TD
-  A[Prepare env] --> B[Run tests]
-  B --> C{All green?}
-  C -- yes --> D[Deploy]
-  C -- no --> E[Fix bugs]
-```
+## Main
+Ensure BIOS version is the same accross all units.
+[Get BIOS versions here](https://www.asrock.com/mb/AMD/B550M%20Pro4/index.asp#BIOS)
+![Screenshot](./images/Main.png)
 
-And here’s the install script:
+### Time
 
-```bash
-#!/usr/bin/env bash
-set -e
+Make sure time is accurate. Timezone diffrences may affect hh:mm:ss even is date is correct.
 
-echo "Updating package list…"
-sudo apt update
-
-echo "Installing nginx…"
-sudo apt install -y nginx
-
-echo "Done!"
-```
+![Screenshot](./images/Time.png)
 
 ## Advanced
 
 ![Screenshot](./images/Advanced.png)
 
-### Onboard Devices
-
-![Screenshot](./images/Advanced/Onboard_Devices.png)
-
 ### PCI
 
-![Screenshot](./images/Advanced/PCI.png)
+![Screenshot](./images/Advanced-PCI.png)
+
+### Onboard Devices
+
+![Screenshot](./images/Advanced-Onboard_Devices.png)
+
+### Storage
+
+![Screenshot](./images/Advanced-Storage.png)
+
+### ACPI
+
+![Screenshot](./images/Advanced-ACPI.png)
+
+### AMD PBS
+
+![Screenshot](./images/Advanced-AMD_PBS.png)

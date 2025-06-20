@@ -1,4 +1,4 @@
-# My Cool Project
+# Template
 
 Here’s a little workflow:
 
