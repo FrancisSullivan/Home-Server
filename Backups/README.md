@@ -39,7 +39,7 @@ m-->|"Nighly"|n-->|"Nighly"|o
 
 ```mermaid
 graph TD
-a[Backup server starts up, booting into Proxmox, hosting networkshare for backups]
+a[Backup server powers on, booting into Proxmox, hosting networkshare for backups]
 d[Primary server reboots BUT boots in to Clonezilla]
 a-->d
 e[Clonezilla creates an image of disks and sends them to network share]
