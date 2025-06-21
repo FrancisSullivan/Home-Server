@@ -4,7 +4,7 @@
 
 ```mermaid
 graph LR
-a["Disk images
+a["Boot disk images
 Primary server"]
 d["Backup server 
 (30 day retention)"]
@@ -40,33 +40,17 @@ m-->|"Nighly"|n-->|"Nighly"|o
 ```mermaid
 graph TD
 a[Backup server powers on, booting into Proxmox, hosting networkshare for backups]
+k["VMs are migrated from primary server, to backup server.
+Most are now running on backup server"]
 d[Primary server reboots BUT boots in to Clonezilla]
 a-->d
 e[Clonezilla creates an image of disks and sends them to network share]
 d-->e
 g[Primary server reboots into Proxmox]
 e-->g
-h[Backup server is running PBS, Primary server sends all VMs to PBS]
+h[All VMs from primary server are backed up to PBS which is running on backup server.]
 g-->h
+j[Primary server can now start VMs]
 i[Primary server replicates all TrueNAS datasets to backup server]
 h-->i
 ```
-
-
-
-And here’s the install script:
-
-```bash
-#!/usr/bin/env bash
-set -e
-
-echo "Updating package list…"
-sudo apt update
-
-echo "Installing nginx…"
-sudo apt install -y nginx
-
-echo "Done!"
-```
-
-![Diagram](./images/wake.png)
