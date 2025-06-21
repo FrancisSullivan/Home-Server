@@ -44,10 +44,8 @@ d[Primary server reboots BUT boots in to Clonezilla]
 a-->d
 e[Clonezilla creates an image of disks and sends them to network share]
 d-->e
-f[Disk images are stored for 30 days]
-e-->f
 g[Primary server reboots into Proxmox]
-f-->g
+e-->g
 h[Backup server is running PBS, Primary server sends all VMs to PBS]
 g-->h
 i[Primary server replicates all TrueNAS datasets to backup server]
