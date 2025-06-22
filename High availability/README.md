@@ -1,28 +1,57 @@
-# Template
+# HA
 
-Here’s a little workflow:
+## Legend
+
+🟢 Online 🔴 Offline 📦 VM
+
+## Normal operation
 
 ```mermaid
 graph TD
-  A[Prepare env] --> B[Run tests]
-  B --> C{All green?}
-  C -- yes --> D[Deploy]
-  C -- no --> E[Fix bugs]
+a[🟢 Qdevice]
+d["🟢 Node Home Primary
+📦"]
+e[🟢 Node Farm Primary]
+
+a-->d
+a-->e
+
 ```
 
-And here’s the install script:
+## Node goes offline
 
-```bash
-#!/usr/bin/env bash
-set -e
+### VM is down
 
-echo "Updating package list…"
-sudo apt update
+```mermaid
+graph TD
+a[🟢 Qdevice]
+d["🔴 Node Home Primary
+📦💀"]
+e[🟢 Node Farm Primary]
+a-->d
+a-->e
 
-echo "Installing nginx…"
-sudo apt install -y nginx
-
-echo "Done!"
 ```
 
-![Diagram](./images/wake.png)
+### VM Migrates
+
+```mermaid
+graph LR
+d[🟢 Node Home Primary]
+e[🔴 Node Farm Primary]
+e-->|"📦"|d
+
+```
+
+### VM Is Running on Other Node
+
+```mermaid
+graph TD
+a[🟢 Qdevice]
+d[🔴 Node Home Primary]
+e["🟢 Node Farm Primary
+📦"]
+a-->d
+a-->e
+
+```
