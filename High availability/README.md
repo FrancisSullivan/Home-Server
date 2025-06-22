@@ -1,16 +1,16 @@
-# HA
+# High Availability
 
 ## Legend
 
 🟢 Online 🔴 Offline 🖥️ VM
 
-## Normal operation
+## Normal Operation
 
 ```mermaid
 graph TD
 a[🟢 Qdevice]
 d["🟢 Node Home Primary
-🖥️"]
+🟢 VM 🖥️"]
 e[🟢 Node Farm Primary]
 
 a-->d
@@ -18,40 +18,44 @@ a-->e
 
 ```
 
-## Node goes offline
+## Home Node is Down
 
-### VM is down
+### VM is Down
 
 ```mermaid
 graph TD
 a[🟢 Qdevice]
 d["🔴 Node Home Primary
-🖥️💀"]
+🔴 VM 🖥️"]
 e[🟢 Node Farm Primary]
 a-->d
 a-->e
 
 ```
 
-### VM Migrates
+### VM Migrates with Downtime of 4 Minutes
 
 ```mermaid
 graph LR
-d[🟢 Node Home Primary]
-e[🔴 Node Farm Primary]
-e-->|"🖥️"|d
+d["🟢 Node Home Primary 
+🟢 VM 🖥️"]
+e["🔴 Node Farm Primary
+🔴 VM 🖥️"]
+e-->|"4 minute migration
+🔴 VM 🖥️"|d
 
 ```
 
-### VM Is Running on Other Node
+### VM Running on Other Node
 
 ```mermaid
 graph TD
 a[🟢 Qdevice]
 d[🔴 Node Home Primary]
 e["🟢 Node Farm Primary
-🖥️"]
+🟢 VM 🖥️"]
 a-->d
 a-->e
 
 ```
+
