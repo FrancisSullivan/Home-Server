@@ -2,7 +2,7 @@
 
 ## Legend
 
-🟢 Online 🔴 Offline 📦 VM
+🟢 Online 🔴 Offline 🖥️ VM
 
 ## Normal operation
 
@@ -10,7 +10,7 @@
 graph TD
 a[🟢 Qdevice]
 d["🟢 Node Home Primary
-📦"]
+🖥️"]
 e[🟢 Node Farm Primary]
 
 a-->d
@@ -26,7 +26,7 @@ a-->e
 graph TD
 a[🟢 Qdevice]
 d["🔴 Node Home Primary
-📦💀"]
+🖥️💀"]
 e[🟢 Node Farm Primary]
 a-->d
 a-->e
@@ -39,7 +39,7 @@ a-->e
 graph LR
 d[🟢 Node Home Primary]
 e[🔴 Node Farm Primary]
-e-->|"📦"|d
+e-->|"🖥️"|d
 
 ```
 
@@ -50,7 +50,7 @@ graph TD
 a[🟢 Qdevice]
 d[🔴 Node Home Primary]
 e["🟢 Node Farm Primary
-📦"]
+🖥️"]
 a-->d
 a-->e
 
