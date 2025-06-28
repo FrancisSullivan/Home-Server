@@ -1,5 +1,53 @@
 # Backups
 
+## Cluster Structure
+
+```mermaid
+graph TD
+d["Home Primary
+🟢 Normally On"]
+e["Farm Primary
+🟢 Normally On"]
+f["Home Backup
+🔴 Normally Off"]
+g["Farm Backup
+🔴 Normally Off"]
+d---f
+e---g
+
+```
+
+## Onsite Backups
+
+```mermaid
+graph TD
+d["🏠 Primary"]
+e["🚜 Primary"]
+f["🏠 Backup"]
+g["🚜 Backup"]
+d<-->|"Nightly
+Backup"|f
+e<-->|"Nightly
+Backup"|g
+
+```
+
+## Site to Site Backups
+
+```mermaid
+graph LR
+d["🏠 Primary"]
+e["🚜 Primary"]
+f["🏠 Backup"]
+g["🚜 Backup"]
+f<-->|"Nightly
+Backup"|g
+d<-->|"Nightly
+Backup"|e
+
+```
+
+
 ## What's being backed up and to where
 
 ```mermaid
