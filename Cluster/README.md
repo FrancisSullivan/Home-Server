@@ -4,14 +4,23 @@
 
 ```mermaid
 graph TD
-a[Qdevice]
+z[Site A]
+q[Site B]
+y[Site C]
+
 d[Node Home Primary]
-e[Node Farm Primary]
-a-->d
-a-->e
+a[Qdevice]
+e[Node Offsite Primary]
+
 f[Node Home Backup]
-g[Node Home Backup]
+g[Node Home Test]
+
+z-->d
+q-->a
+y-->e
+
+
 d-->f
-e-->g
+f-->g
 
 ```

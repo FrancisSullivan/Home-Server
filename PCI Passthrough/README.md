@@ -2,11 +2,11 @@
 
 ## Enable in BIOS
 
-Ensure SR-IOV Support is enabled:
+#### Ensure SR-IOV Support is enabled:
 
 ![Image](./images/SR-IOV.png)
 
-Ensure IOMMU is enabled:
+#### Ensure IOMMU is enabled:
 
 ![Image](./images/IOMMU.png)
 
@@ -51,13 +51,13 @@ vfio_pci
 vfio_virqfd
 ```
 
-## How to Passthrough a device
+## Passing Through a Device
 
-### List PCI Devices
+### Get the Device PCI Address
 
-Here you can find the ID of your device
+Here you can find the PCI address of your device
 
-CAUTION: Device ID's will change if you change the number of devices connected to your system. This can break scripts or VMs if you ever remove or add a device from your system! If you ever need to change the number of devices, ensure PCI passthrough scripts are disabled and VMs do not start at boot, then update to new ID's before re-enabling.
+CAUTION: Device PCI addresses will change if you change the number of devices connected to your system. This can break scripts or VMs if you ever remove or add a device from your system! If you ever need to change the number of devices, ensure PCI passthrough scripts are disabled and VMs do not start at boot, then update to new PCI address before re-enabling.
 
 Command:
 
@@ -80,7 +80,7 @@ Abridged Output:
 0d:00.3 USB controller: Advanced Micro Devices, Inc. [AMD] Matisse USB 3.0 Host Controller
 ```
 
-### List IOMMU Groups
+### Confirm the IOMMU Group is Isolated
 
 It is only possible to passthrough devices by passing through the entire group.
 
@@ -147,6 +147,10 @@ Here we can confirm that '04:00.0' is on group '22' and is the only device on th
 /sys/kernel/iommu_groups/22/devices/0000:04:00.0
 ```
 
+### Script Passthrough at Boot Time
+
+#### Create passthrough script
+
 Command:
 
 ```bash
@@ -173,29 +177,38 @@ case $1 in
         exit 0
         ;;
 esac
-# Unbind the PCI device from its current driver
-# Replace "0000:09:00.0" with the PCI address of your specific device.
+
+
+# In each of the below 3 sections replace PCI addresses with the that of target device(s) and un-comment.
+# Add as many new lines as needed.
+
+# 1. Unbind the PCI device from its current driver
 #echo "0000:05:00.0" > /sys/bus/pci/devices/0000:05:00.0/driver/unbind
 #echo "0000:06:00.0" > /sys/bus/pci/devices/0000:06:00.0/driver/unbind
 #echo "0000:08:00.0" > /sys/bus/pci/devices/0000:08:00.0/driver/unbind
 
-# Override the current driver with vfio-pci
+# 2. Override the current driver with vfio-pci
 # This prepares the device for binding to the vfio-pci driver.
 #echo "vfio-pci" > /sys/bus/pci/devices/0000:05:00.0/driver_override
 #echo "vfio-pci" > /sys/bus/pci/devices/0000:06:00.0/driver_override
 #echo "vfio-pci" > /sys/bus/pci/devices/0000:08:00.0/driver_override
-# Bind the PCI device to the vfio-pci driver
+
+# 3. Bind the PCI device to the vfio-pci driver
 # This step finalizes the passthrough setup for the device.
 #echo "0000:05:00.0" > /sys/bus/pci/drivers/vfio-pci/bind
 #echo "0000:06:00.0" > /sys/bus/pci/drivers/vfio-pci/bind
 #echo "0000:08:00.0" > /sys/bus/pci/drivers/vfio-pci/bind
 ```
 
+#### Make the script executable
+
 Command:
 
 ```bash
 chmod +x /etc/initramfs-tools/scripts/init-top/vfio-bind
 ```
+
+#### Update the boot image
 
 Command:
 
@@ -209,7 +222,7 @@ Command:
 reboot now
 ```
 
-Confirm that the Kernel driver in use is 'vfio-pci'
+#### Confirm that the Kernel driver in use is 'vfio-pci'
 
 Command:
 
@@ -225,3 +238,5 @@ Output:
 	Kernel driver in use: vfio-pci
 	Kernel modules: ahci
 ```
+
+This device is now ready to assign to a VM.
