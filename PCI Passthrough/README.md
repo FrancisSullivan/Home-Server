@@ -181,7 +181,7 @@ Abridged Output:
 0b:00.0 VGA compatible controller: Intel Corporation DG2 [Arc A310] (rev 05)
 ```
 
-Find the PCI Device ID using the PCI address of the device
+#### Find the PCI Device ID using the PCI address of the device
 
 Command:
 
