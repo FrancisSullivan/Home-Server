@@ -12,6 +12,8 @@
 
 ## Enable in Proxmox
 
+### Enable IOMMU
+
 Command:
 
 ```bash
@@ -29,6 +31,8 @@ Command:
 ```bash
 proxmox-boot-tool refresh
 ```
+
+### Load VFIO Modules at Boot
 
 Command:
 
