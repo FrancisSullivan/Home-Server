@@ -1,104 +1,40 @@
 # Backups
 
-## Cluster Structure
+## Nodes Backed Up and Frequency
+
+#### 3-Way-Sync
+
+Using a 3-1-1 backup stratergy
+
+3 copies of data. 1 medium. 1 copy stored offsite.
 
 ```mermaid
-graph TD
-d["Home Primary
-🟢 Normally On"]
-e["Farm Primary
-🟢 Normally On"]
-f["Home Backup
-🔴 Normally Off"]
-g["Farm Backup
-🔴 Normally Off"]
-d---f
-e---g
-
-```
-
-## Onsite Backups
-
-```mermaid
-graph TD
-d["🏠 Primary"]
-e["🚜 Primary"]
-f["🏠 Backup"]
-g["🚜 Backup"]
+graph LR
+e["Onsite 
+Primary Node"]
+d["Offsite 
+Primary Node"]
+f["Onsite 
+Backup Node"]
 d<-->|"Nightly
-Backup"|f
+Sync"|f
+d<-->|"Nightly
+Sync"|e
 e<-->|"Nightly
-Backup"|g
-
+Sync"|f
 ```
 
-## Site to Site Backups
+## Data Backed Up and Tool Used
 
-```mermaid
-graph LR
-d["🏠 Primary"]
-e["🚜 Primary"]
-f["🏠 Backup"]
-g["🚜 Backup"]
-f<-->|"Nightly
-Backup"|g
-d<-->|"Nightly
-Backup"|e
+VM and Hypervisor Data
 
-```
+Proxmox Backup Server
 
+Media and Personal Files
 
-## What's being backed up and to where
+TrueNAS Replication
 
-```mermaid
-graph LR
-a["Boot disk images
-Primary server"]
-d["Backup server 
-(30 day retention)"]
-j["Offisite backup server
-(1 year retention)"]
-a-->|"Nighly"|d-->|"Monthly"|j
-e["VMs
-Primary server"]
-f["Backup server 
-(Indefinite retention)"]
-k["Offisite backup server
-(Indefinite retention)"]
-e-->|"Nighly"|f-->|"Nighly"|k
-g["TrueNAS datasets
-Primary server"]
-h["Backup server 
-(30 day retention)"]
-l["Offisite backup server
-(30 day retention)"]
-g-->|"Nighly"|h-->|"Nighly"|l
-m["Proxmox config files
-Primary server"]
-n["Backup server 
-(Indefinite retention)"]
-o["Offisite backup server
-(Indefinite retention)"]
-m-->|"Nighly"|n-->|"Nighly"|o
+SyncThing
 
-```
+## Restoring Data
 
-## Nightly Backup Granular Flowchart
-
-```mermaid
-graph TD
-a[Backup server powers on, booting into Proxmox, hosting networkshare for backups]
-k["VMs are migrated from primary server, to backup server.
-Most are now running on backup server"]
-d[Primary server reboots BUT boots in to Clonezilla]
-a-->d
-e[Clonezilla creates an image of disks and sends them to network share]
-d-->e
-g[Primary server reboots into Proxmox]
-e-->g
-h[All VMs from primary server are backed up to PBS which is running on backup server.]
-g-->h
-j[Primary server can now start VMs]
-i[Primary server replicates all TrueNAS datasets to backup server]
-h-->i
-```
