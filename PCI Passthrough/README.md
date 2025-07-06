@@ -386,4 +386,6 @@ Output:
 	Kernel modules: ahci
 ```
 
+If 'Kernel driver in use: vfio-pci'
+
 This device is now ready to assign to a VM.
