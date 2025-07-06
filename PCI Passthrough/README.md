@@ -4,11 +4,11 @@
 
 #### Ensure SR-IOV Support is enabled:
 
-![Image](./images/SR-IOV.png)
+![Image](./Images/SR-IOV.png)
 
 #### Ensure IOMMU is enabled:
 
-![Image](./images/IOMMU.png)
+![Image](./Images/IOMMU.png)
 
 ## Enable in Proxmox
 
@@ -317,7 +317,7 @@ Command:
 ip link show
 ```
 
-![Image](./images/network-1.png)
+![Image](./Images/network-1.png)
 
 Update the network interfaces file
 
