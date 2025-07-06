@@ -51,13 +51,7 @@ vfio_pci
 vfio_virqfd
 ```
 
-## Passing Through a Device
-
-### Get the Device PCI Address
-
-Here you can find the PCI address of your device
-
-CAUTION: Device PCI addresses will change if you change the number of devices connected to your system. This can break scripts or VMs if you ever remove or add a device from your system! If you ever need to change the number of devices, ensure PCI passthrough scripts are disabled and VMs do not start at boot, then update to new PCI address before re-enabling.
+## Get the Device PCI Address
 
 Command:
 
@@ -80,7 +74,15 @@ Abridged Output:
 0d:00.3 USB controller: Advanced Micro Devices, Inc. [AMD] Matisse USB 3.0 Host Controller
 ```
 
-### Confirm the IOMMU Group is Isolated
+The PCI address is located at the start of each line
+
+E.g. '0a:00.0' for Arc A310
+
+```bash
+0a:00.0 VGA compatible controller: Intel Corporation DG2 [Arc A310] (rev 05) VGA compatible 
+```
+
+## Confirm the IOMMU Group is Isolated
 
 It is only possible to passthrough devices by passing through the entire group.
 
@@ -140,14 +142,87 @@ Output:
 /sys/kernel/iommu_groups/27/devices/0000:09:01.0
 ```
 
-Here we can confirm that '04:00.0' is on group '22' and is the only device on the group.
+Now we can confirm that '04:00.0' is on group '22' and is the only device on the group.
 
 ```bash
 04:00.0 SATA controller: JMicron Technology Corp. JMB58x AHCI SATA controller
 /sys/kernel/iommu_groups/22/devices/0000:04:00.0
 ```
 
-### Script Passthrough at Boot Time
+## GPU Passthrough
+
+CAUTION! This can softbrick your system if done incorrectly!
+
+If you only have one GPU, and you enable passthrough, you will nolonger be able to reach the terminal with with a keyboard and monitor or KVM.
+
+Your device MUST be accessable via the network, or it will be softbricked!
+
+Ensure:
+
+You have DHCP enabled so your device can always connect to the internet.
+
+You can access the device over the internet with a VPN such as TailScale or HeadScale
+
+#### Locate the PCI address of your GPU
+
+Command:
+
+```bash
+lspci
+```
+
+Abridged Output:
+
+```bash
+0b:00.0 VGA compatible controller: Intel Corporation DG2 [Arc A310] (rev 05)
+```
+
+Find the PCI Device ID using the PCI address of the device
+
+Command:
+
+```bash
+lspci -nnk -s 0b:00.0
+```
+
+Output:
+
+```bash
+0b:00.0 VGA compatible controller [0300]: Intel Corporation DG2 [Arc A310] [8086:56a6] (rev 05)
+	Subsystem: Device [172f:4019]
+	Kernel driver in use: i915
+	Kernel modules: i915, xe
+```
+
+The PCI device ID is inside the square brackets e.g. '[8086:56a6]' above
+
+#### Exclude the device using it's PCI ID
+
+Command:
+
+```bash
+nano /etc/modprobe.d/vfio.conf
+```
+
+Set File Contents:
+
+```bash
+options vfio-pci ids=8086:56a6 disable_vga=1
+```
+
+Continue to the 'Update the boot image' section of this doc
+
+## Passthrough an Non-GPU Device
+
+CAUTION! This can softbrick your system if done incorrectly!
+
+If you enter the incorrect PCI addresses into this script your system can be softbricked!
+
+Ensure:
+
+Your Proxmox host is backed up.
+
+You have done a test restore to ensure you can restore from this backup.
 
 #### Create passthrough script
 
@@ -208,7 +283,75 @@ Command:
 chmod +x /etc/initramfs-tools/scripts/init-top/vfio-bind
 ```
 
-#### Update the boot image
+## Changing the Number of PCI Devices on the System
+
+CAUTION: Device PCI addresses will change if you change the number of devices connected to your system.
+
+This can break things if you do not take proper precautions when adding or removing a device from your system!
+
+### Precautions
+
+If you ever need to change the number of devices
+
+Ensure:
+
+GPU - You have a display output for the Proxmox host
+
+PCI passthrough scripts are disabled or sections passing through devices are hashed out
+
+VMs that have devices passed through to them do not start at boot
+
+### When Networking Breaks
+
+You must access the device with you KVM and update your network config.
+
+Find the new number of the network device
+
+Command:
+
+```bash
+ip link show
+```
+
+![Image](./images/network-1.png)
+
+Update the network interfaces file
+
+Command:
+
+```bash
+nano /etc/network/interfaces
+```
+
+Set File Contents with New Name:
+
+```bash
+auto lo
+iface lo inet loopback
+
+iface enp7s0 inet manual
+
+auto vmbr0
+iface vmbr0 inet dhcp
+        bridge-ports enp7s0
+        bridge-stp off
+        bridge-fd 0
+
+
+source /etc/network/interfaces.d/*
+```
+
+Here 'enp6s0' has been changed to 'enp7s0'
+
+Restart Networking
+
+Command:
+
+```bash
+systemctl restart networking
+```
+
+## Update the boot image
 
 Command:
 
