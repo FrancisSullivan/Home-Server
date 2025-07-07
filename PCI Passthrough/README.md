@@ -4,7 +4,7 @@
 
 #### Ensure SR-IOV Support is enabled:
 
-![Image](./Images/SR-IOV.png)
+![Image](./images/SR-IOV.png)
 
 #### Ensure IOMMU is enabled:
 
