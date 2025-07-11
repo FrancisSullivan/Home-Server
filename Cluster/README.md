@@ -1,6 +1,6 @@
-# Backups
+# Cluster
 
-## Nightly Backup Granular Flowchart
+## Cluster
 
 ```mermaid
 graph TD
