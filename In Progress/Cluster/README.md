@@ -4,6 +4,7 @@
 
 ```mermaid
 graph TD
+
 z[Site A]
 q[Site B]
 y[Site C]
@@ -13,14 +14,10 @@ a[Qdevice]
 e[Node Offsite Primary]
 
 f[Node Home Backup]
-g[Node Home Test]
 
 z-->d
+z-->f
 q-->a
 y-->e
-
-
-d-->f
-f-->g
 
 ```
