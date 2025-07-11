@@ -1,12 +1,25 @@
 # Backups
 
-## Nodes Backed Up and Frequency
+## Mass Storage Backups
 
-#### 3-Way-Sync
+```mermaid
+graph LR
 
-Using a 3-1-1 backup stratergy
+d["Offsite 
+Primary Node"]
+f["Onsite 
+Backup Node"]
+e["Onsite 
+Primary Node"]
 
-3 copies of data. 1 medium. 1 copy stored offsite.
+f-->|"Nightly
+Replication"|d
+
+e-->|"Nightly
+Replication"|f
+```
+
+## VM Backups
 
 ```mermaid
 graph LR
@@ -35,6 +48,13 @@ Media and Personal Files
 TrueNAS Replication
 
 SyncThing
+
+3-Way-Sync
+
+Using a 3-1-1 backup stratergy
+
+3 copies of data. 1 medium. 1 copy stored offsite.
+
 
 ## Restoring Data
 

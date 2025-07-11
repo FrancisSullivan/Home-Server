@@ -1,5 +1,21 @@
 # PCI Passthrough
 
+##
+
+```mermaid
+graph TD
+  B[Raw Hardware]
+  B --"SATA Controller
+  -Boot SSDs 
+  -VM SSDs"-->C{Hypervisor}
+  C --"GPU"--> D[Media Server VM]
+  C --"SATA Controller
+  -Mass Storage HDDs
+  NVME Cache SSD"--> E[NAS VM]
+  C--"SATA Controller
+  -VM Backup SSD"-->F["Backup Server VM"]
+```
+
 ## Enable in BIOS
 
 #### Ensure SR-IOV Support is enabled:
