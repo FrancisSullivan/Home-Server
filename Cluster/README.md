@@ -70,18 +70,22 @@ Parent's House"]
 y["Site C
 Sister's House"]
 
-d["Primary
-Always On
-mcd-s1-d1"]
-f["Onsite Backup
+d["mcd-s1-d1
+Primary
+🟢 Always On
+"]
+f["mcd-s1-d2
+Onsite Backup
 Only On During Backups
-mcd-s1-d2"]
-e["Qdevice
-Always On
-mcd-s3-q1"]
-a["Offsite Backup
-Always On
-mcd-s2-d1"]
+"]
+e["mcd-s3-q1
+Qdevice
+🟢 Always On
+"]
+a["mcd-s2-d1
+Offsite Backup
+🟢 Always On
+"]
 
 
 
