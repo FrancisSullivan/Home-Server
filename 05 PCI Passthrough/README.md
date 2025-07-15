@@ -8,10 +8,11 @@ graph TD
   B --"SATA Controller
   -Boot SSDs 
   -VM SSDs"-->C{Hypervisor}
-  C --"GPU"--> D[Media Server VM]
-  C --"SATA Controller
+  C --"-GPU"--> D[Media Server VM]
+  C --"-NVME Cache SSD
+  SATA Controller
   -Mass Storage HDDs
-  NVME Cache SSD"--> E[NAS VM]
+  "--> E[NAS VM]
   C--"SATA Controller
   -VM Backup SSD"-->F["Backup Server VM"]
 ```
