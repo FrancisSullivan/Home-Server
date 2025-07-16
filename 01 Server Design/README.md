@@ -46,13 +46,19 @@ NVME SSD as a fast share for tempfiles, Jellyfin transcodes, downloads, cache.
 
 ## Bill of Materials
 
-3,270 per server = 6,540 total
+3,925 per server 
+
+3,925 * 2 = 7,850
 
 Type-Quantity-GenericDescription-Name-CostEach-CostSet
 
 300 Case
 
+120 Nocutua Case Fans
+
 240 CPU
+
+95 CPU Cooler
 
 280 RAM
 
@@ -64,7 +70,11 @@ Type-Quantity-GenericDescription-Name-CostEach-CostSet
 
 205 NVME SSDs
 
-200 SATA SSDs
+200 SATA VM SSDs
+
+300 SATA VM Backup SSD
+
+140 SATA Boot SSDs
 
 1360 Hard drives
 
