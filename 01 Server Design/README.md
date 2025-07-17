@@ -86,21 +86,21 @@ Total 3,925 per server
 
 | Item Type               | Specific Item                                                                            | Cost per Item | Quantity | Total Cost |
 |:------------------------|:-----------------------------------------------------------------------------------------|--------------:|---------:|-----------:|
-| Hard Drives             | [WD200EDGZ 20TB](https://example.com/products/hard-drives)                               | $330          |        4 | $1320      |
-| Case                    | [SilverStone CS382](https://www.silverstonetek.com/en/product/info/computer-chassis/cs382/) | $300          |        1 | $300       |
-| SATA VM Backup SSD      | [SATA VM Backup SSD](https://example.com/products/sata-backup)                           | $300          |        1 | $300       |
-| RAM                     | [Kingston KSM32ED8/32HC 32GB DDR4](https://example.com/products/ram)                     | $140          |        1 | $280       |
-| CPU                     | [AMD Ryzen 7 5700X](https://example.com/products/cpu)                                    | $240          |        1 | $240       |
-| NVME SSD                | [Samsung 990 PRO 2TB](https://example.com/products/nvme-ssd)                             | $205          |        1 | $205       |
-| PSU                     | [PSU](https://example.com/products/psu)                                                  | $200          |        1 | $200       |
-| SATA VM SSDs            | [870 EVO 1TB](https://www.samsung.com/au/memory-storage/sata-ssd/870-evo-1tb-sata-3-2-5-ssd-mz-77e1t0bw) | $100 |        1 | $200       |
-| GPU                     | [Sparkle Intel Arc A310 ECO](https://example.com/products/gpu)                           | $155          |        1 | $155       |
-| SATA Boot SSDs          | [SATA Boot SSDs](https://example.com/products/sata-boot-ssds)                            | $70           |        2 | $140       |
-| Case Fans               | [Noctua NF‑A8 PWM](https://example.com/products/noctua-fans)                             | $40           |        3 | $120       |
-| Motherboard             | [ASRock B550M Pro4](https://example.com/products/motherboard)                            | $100          |        1 | $100       |
-| Network Card            | [TP‑Link TX401 10Gbps](https://example.com/products/network-card)                        | $100          |        1 | $100       |
-| CPU Cooler              | [Noctua NH‑L9a‑AM4](https://example.com/products/cpu-cooler)                             | $95           |        1 | $95        |
-| SATA Controller 5‑port  | [SilverStone ECS07](https://example.com/products/sata-ctl-5port)                         | $70           |        1 | $70        |
-| SATA Controller 2‑port  | [FILL](https://example.com/products/sata-ctl-2port)                                      | $40           |        1 | $40        |
-| SATA Controller 2‑port2 | [FILL](https://example.com/products/sata-ctl-2port-2)                                    | $20           |        1 | $20        |
+| Hard Drives             | [WD200EDGZ 20TB](https://serverpartdeals.com/products/western-digital-wd200edgz-20tb-7-2k-rpm-sata-6gb-s-512e-3-5-recertified-hard-drive)                               | $330          |        4 | $1320      |
+| Case                    | [SilverStone CS382](https://www.silverstonetek.com/en/product/info/computer-chassis/cs382/) | $300       |        1 | $300       |
+| SATA VM Backup SSD      | [FILL](https://example.com)                           | $300          |        1 | $300       |
+| RAM                     | [Kingston KSM32ED8/32HC 32GB DDR4](https://www.kingston.com/en/memory/search?partId=KSM32ED8%2F32HC) | $140 |        1 | $280       |
+| CPU                     | [AMD Ryzen 7 5700X](https://www.techpowerup.com/cpu-specs/ryzen-7-5700x.c2755)           | $240          |        1 | $240       |
+| NVME SSD                | [Samsung 990 PRO 2TB](https://www.techpowerup.com/ssd-specs/samsung-990-pro-2-tb.d862)     | $205          |        1 | $205       |
+| PSU                     | [CORSAIR SF600 Platinum](https://www.corsair.com/eu/en/p/psu/cp-9020182-eu/sf-series-sf600-600-watt-80-plus-platinum-certified-high-performance-sfx-psu-eu-cp-9020182-eu)                                                  | $200          |        1 | $200       |
+| SATA VM SSDs            | [Samsung 870 EVO 1TB](https://www.techpowerup.com/ssd-specs/samsung-870-evo-1-tb.d3)      | $100          |        1 | $200       |
+| GPU                     | [SPARKLE Arc A310 ECO](https://www.techpowerup.com/gpu-specs/sparkle-arc-a310-eco.b11758) | $155          |        1 | $155       |
+| SATA Boot SSDs          | [FILL](https://example.com)                            | $70           |        2 | $140       |
+| Case Fans               | [Noctua NF‑A8 PWM](https://noctua.at/en/nf-a8-pwm)                             | $40           |        3 | $120       |
+| Motherboard             | [ASRock B550M Pro4](https://www.asrock.com/mb/AMD/B550M%20Pro4/index.asp#Specification)                            | $100          |        1 | $100       |
+| Network Card            | [TP‑Link TX401 10Gbps](https://www.tp-link.com/au/home-networking/pci-adapter/tx401/#overview)                        | $100          |        1 | $100       |
+| CPU Cooler              | [Noctua NH‑L9a‑AM4](https://noctua.at/en/nh-l9a-am4)                             | $95           |        1 | $95        |
+| SATA Controller 5‑port  | [SilverStone ECS07](https://www.silverstonetek.com/en/product/info/expansion-cards/ECS07/)                         | $70           |        1 | $70        |
+| SATA Controller 2‑port  | [FILL](https://example.com)                                      | $40           |        1 | $40        |
+| SATA Controller 2‑port2 | [FILL](https://example.com)                                    | $20           |        1 | $20        |
 
