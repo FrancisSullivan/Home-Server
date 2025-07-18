@@ -48,40 +48,6 @@ NVME SSD as a fast share for tempfiles, Jellyfin transcodes, downloads, cache.
 
 Total 3,925 per server
 
-300 Case
-
-120 Nocutua Case Fans
-
-240 CPU
-
-95 CPU Cooler
-
-280 RAM
-
-155 GPU
-
-100 Motherboard
-
-200 PSU
-
-205 NVME SSD
-
-200 SATA VM SSDs
-
-300 SATA VM Backup SSD
-
-140 SATA Boot SSDs
-
-1360 Hard drives
-
-100 Network card
-
-70 SATA Controller 5-port
-
-40 SATA Controller 2-port
-
-20 SATA Controller 2-port
-
 3,925 * 2 = 7,850
 
 | Item Type               | Specific Item                                                                                        | Cost per Item | Quantity | Total Cost |
